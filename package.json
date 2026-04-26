@@ -11,7 +11,8 @@
   "dependencies": {
     "@supabase/ssr": "^0.10.2",
     "@supabase/supabase-js": "^2.103.0",
-    "@tanstack/react-table": "^8.21.3",
+    "ag-grid-community": "^35.2.1",
+    "ag-grid-react": "^35.2.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
@@ -21,6 +22,7 @@
     "next": "16.2.3",
     "radix-ui": "^1.4.3",
     "react": "19.2.4",
+    "react-day-picker": "^9.14.0",
     "react-dom": "19.2.4",
     "recharts": "^3.8.1",
     "shadcn": "^4.2.0",
@@ -31,11 +33,13 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/file-saver": "^2.0.7",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.3",
+    "supabase": "^2.89.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

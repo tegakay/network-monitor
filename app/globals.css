@@ -117,6 +117,26 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* globals.css */
+body {
+  font-family: var(--font-mono), monospace;
+}
+
+h1, h2, h3, th {
+  font-family: var(--font-heading), serif;
+}
+
+table {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.875rem;
+}
+
+thead th {
+  font-family: var(--font-heading), serif;
+  font-weight: 600;
+  /* letter-spacing: 0.05em; */
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

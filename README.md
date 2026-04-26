@@ -1,36 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Network Monitoring Dashboard
 
-## Getting Started
+A comprehensive web application for monitoring network outages and performance metrics, built with Next.js, React, and Supabase.
 
-First, run the development server:
+## Features
+
+- **Real-time Dashboard**: Interactive dashboard displaying network status and metrics
+- **Outage Monitoring**: Track and analyze network outages with drilldown capabilities
+- **RNA Metrics**: Monitor RNA (Radio Network Analytics) performance data
+- **Interactive Charts**: Visualize data using pie charts and other chart components
+- **Drilldown Tables**: Detailed outage information with AG Grid tables
+- **Export Functionality**: Export outage data to various formats
+- **Responsive Design**: Built with Tailwind CSS for mobile and desktop compatibility
+
+## Tech Stack
+
+- **Frontend**: Next.js 16, React 19, TypeScript
+- **Styling**: Tailwind CSS, Radix UI components
+- **Charts**: Recharts
+- **Tables**: AG Grid React
+- **Database**: Supabase (PostgreSQL)
+- **State Management**: Zustand
+- **Icons**: Lucide React
+
+## Prerequisites
+
+- Node.js 18+
+- npm or yarn
+- Supabase account and project
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd network-monitoring-dashboard
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Set up Supabase:
+   - Create a new Supabase project
+   - Copy your project URL and anon key
+   - Update `lib/supabase/client.ts` and `lib/supabase/server.ts` with your credentials
+   - Run the database migrations:
+     ```bash
+     npx supabase db push
+     ```
+   - Seed the database (if needed):
+     ```bash
+     npx supabase db reset
+     ```
+
+4. Configure environment variables (if any) in `.env.local`
+
+## Running the Application
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## API Endpoints
 
-To learn more about Next.js, take a look at the following resources:
+- `GET /api/drilldown?technology=<tech>&region=<region>` - Fetch outage drilldown data
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+├── app/                    # Next.js app directory
+│   ├── api/               # API routes
+│   ├── dashboard/         # Dashboard pages
+│   └── globals.css        # Global styles
+├── components/            # React components
+│   ├── charts/           # Chart components
+│   ├── outage/           # Outage-related components
+│   └── ui/               # UI components (shadcn/ui)
+├── hooks/                # Custom React hooks
+├── lib/                  # Utility libraries
+│   └── supabase/         # Supabase configuration
+├── store/                # Zustand state stores
+├── supabase/             # Supabase configuration and migrations
+└── types/                # TypeScript type definitions
+```
 
-## Deploy on Vercel
+## Key Components
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Dashboard**: Main overview page with metrics and charts
+- **Outage Components**: Summary tables, drilldown modals, export functionality
+- **RNA Components**: RNA metrics visualization
+- **Charts**: Pie charts and other data visualizations
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Database Schema
+
+The application uses Supabase with the following main tables:
+- `outage_drilldown`: Detailed outage information
+- Other tables as defined in migrations
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run linting: `npm run lint`
+5. Test your changes
+6. Submit a pull request
+
+## License
+
+This project is private and proprietary.
