@@ -54,7 +54,13 @@ A comprehensive web application for monitoring network outages and performance m
      npx supabase db reset
      ```
 
-4. Configure environment variables (if any) in `.env.local`
+4. Configure environment variables:
+   Create a `.env.local` file in the root directory and add your Supabase credentials:
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
+   You can find these values in your Supabase project dashboard under Settings > API.
 
 ## Running the Application
 
